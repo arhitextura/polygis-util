@@ -1,0 +1,25 @@
+{
+    "name": "polygis-util",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "tsc",
+        "start": "ts-node src/index.ts"
+    },
+    "keywords": [
+        "GIS",
+        "Stereo 70",
+        "Stereo 30",
+        "ETRS89",
+        "Romania",
+        "cadaster"
+    ],
+    "author": "Mihalcea Bogdan Daniel",
+    "license": "ISC",
+    "devDependencies": {
+        "ts-node": "^10.2.1",
+        "typescript": "^4.4.3"
+    },
+    "dependencies": {}
+}
