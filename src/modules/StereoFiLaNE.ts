@@ -21,7 +21,16 @@ export class StereoFiLaNE {
         let raza = (this.a * (1 - ep ** 2)) / w ** 3;
         raza = Math.sqrt((raza * this.a) / w);
         let n = (ep ** 2 * Math.cos(br1) ** 4) / (1 - ep ** 2);
-        n = Math.sqrt(1 + n);
+        n = Math.sqrt(
+            1 +
+                (ep *
+                    ep *
+                    Math.cos(br1) *
+                    Math.cos(br1) *
+                    Math.cos(br1) *
+                    Math.cos(br1)) /
+                    (1 - ep * ep)
+        );
         let s1 = (1 + Math.sin(br1)) / (1 - Math.sin(br1));
         let s2 = (1 - ep * Math.sin(br1)) / (1 + ep * Math.sin(br1));
         let w1 = Math.exp(n * Math.log(s1 * Math.exp(ep * Math.log(s2))));
@@ -29,7 +38,6 @@ export class StereoFiLaNE {
             ((n + Math.sin(br1)) * (1 - (w1 - 1) / (w1 + 1))) /
             ((n - Math.sin(br1)) * (1 + (w1 - 1) / (w1 + 1)));
         let w2 = c * w1;
-
         let hi0 = (w2 - 1) / (w2 + 1);
         hi0 = Math.atan(hi0 / Math.sqrt(1 - hi0 * hi0));
         let sa = (1 + Math.sin(Fi)) / (1 - Math.sin(Fi));
@@ -52,5 +60,6 @@ export class StereoFiLaNE {
             beta;
         this.North = this.North + 500000;
         this.East = this.East + 500000;
+        return { North: this.North, East: this.East };
     }
 }

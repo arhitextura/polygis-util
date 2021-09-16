@@ -31,21 +31,25 @@ export class Interpolation1D {
      */
     readFP(start: number): number {
         let a, b, c, d, e, f, g, h;
-        let binaryFile = fs.readFileSync(
-            //TODO - MAKE THIS REFERABLE TO THE NEEDED GRC FILE
-            path.join(__dirname, "../gis_files/", this.fileName)
-        );
+        try {
+            let binaryFile = fs.readFileSync(
+                //TODO - MAKE THIS REFERABLE TO THE NEEDED GRC FILE
+                path.join(__dirname, "../gis_files/", this.fileName)
+            );
 
-        binaryFile = binaryFile.slice(start, start + 8);
-        a = binaryFile.readInt8(0);
-        b = binaryFile.readInt8(1);
-        c = binaryFile.readInt8(2);
-        d = binaryFile.readInt8(3);
-        e = binaryFile.readInt8(4);
-        f = binaryFile.readInt8(5);
-        g = binaryFile.readInt8(6);
-        h = binaryFile.readInt8(7);
-        return Buffer.from([h, g, f, e, d, c, b, a]).readDoubleBE();
+            binaryFile = binaryFile.slice(start, start + 8);
+            a = binaryFile.readInt8(0);
+            b = binaryFile.readInt8(1);
+            c = binaryFile.readInt8(2);
+            d = binaryFile.readInt8(3);
+            e = binaryFile.readInt8(4);
+            f = binaryFile.readInt8(5);
+            g = binaryFile.readInt8(6);
+            h = binaryFile.readInt8(7);
+            return Buffer.from([h, g, f, e, d, c, b, a]).readDoubleBE();
+        } catch (err) {
+            throw err;
+        }
     }
 
     LoadArrays() {
@@ -159,20 +163,18 @@ export class Interpolation2D extends Interpolation1D {
             this.LoadArrays();
             for (let ii = 1; ii <= 16; ii++) {
                 value = this.readFP(super.GetNC[ii] * 16 - 16 + 48);
-                console.log(value);
                 if (Math.round(value) == 999) {
                     throw new Error("Outside border.");
                 }
                 ax[ii] = value;
                 value = this.readFP(super.GetNC[ii] * 16 - 8 + 48);
-                console.log(value);
                 if (Math.round(value) == 999) {
                     throw new Error("Outside border.");
                 }
                 ay[ii] = value;
             }
         } catch (error) {
-            return error;
+            throw error;
         }
         this.shiftValueE = DoBSInterpolation(this.GetFF, ax);
         this.shiftValueN = DoBSInterpolation(this.GetFF, ay);

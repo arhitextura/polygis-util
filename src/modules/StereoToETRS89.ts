@@ -2,6 +2,9 @@ import { DefaultValues as dV } from "./DefaultValues";
 import { Interpolation2D } from "./Interpolation";
 import { Helmert2D } from "./Helmert2D";
 import { StereoNEFiLa } from "./StereoNEFiLa";
+/**
+ * Handles Stereo 70 or 30 transformation to ETRS89 Radians
+ */
 export class StereoToETRS89 {
     private phi: number;
     private la: number;
@@ -47,6 +50,7 @@ export class StereoToETRS89 {
         let FiLa = stNEFiLA.DoConversion2(this.North, this.East);
         this.phi = FiLa.Fi;
         this.la = FiLa.La;
+        // To radians
         this.phi = (this.phi * 180) / Math.PI;
         this.la = (this.la * 180) / Math.PI;
     }
@@ -66,7 +70,7 @@ export class StereoToETRS89 {
             this.East = this.East - interpolation2D.ShiftValueE;
             this.North = this.North - interpolation2D.ShiftValueN;
         } catch (error) {
-            return error;
+            throw error;
         }
     }
 }

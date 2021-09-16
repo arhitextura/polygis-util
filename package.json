@@ -1,8 +1,9 @@
 {
     "name": "polygis-util",
     "version": "0.0.1",
-    "description": "",
-    "main": "index.js",
+    "description": "This package makes transformations between ETRS89, Stereo70 and Stereo30",
+    "main": "dist/index.ts",
+    "types": "dist/index.d.ts",
     "scripts": {
         "build": "tsc -p .",
         "start": "node dist/index.js",
