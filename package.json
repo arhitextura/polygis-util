@@ -1,8 +1,9 @@
 {
     "name": "polygis-util",
-    "version": "0.0.1",
+    "email": "contact@polygis.xyz",
+    "version": "1.0.0",
     "description": "This package makes transformations between ETRS89, Stereo70 and Stereo30",
-    "main": "dist/index.ts",
+    "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
         "build": "tsc -p .",
@@ -10,6 +11,10 @@
         "dev": "nodemon src/index.ts",
         "test": "jest",
         "coverage": "jest --coverage"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/arhitextura/polygis-util.git"
     },
     "keywords": [
         "GIS",

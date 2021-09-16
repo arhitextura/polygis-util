@@ -33,7 +33,7 @@ function Transformation(East: number, North: number, nameGrid: string): void {
  * @param East The east coordinate
  * @param North The north coordinate
  * @param stereo30or70 Choose between 30 or 70 stereo system
- * @returns ETRS89Coordinates wiwth phi and la
+ * @returns ETRS89Coordinates with phi and la
  *
  */
 export function ConvertStereoToETRS89(
@@ -73,11 +73,11 @@ export function ConvertStereoToETRS89(
 }
 
 /**
- * Handles Stereo 70 or 30 transformation to ETRS89 Radians
+ * Handles ETRS89 transformation to Stereo 70 or 30 Radians
  * @param phi The east coordinate
  * @param la The north coordinate
  * @param stereo30or70 Choose between 30 or 70 stereo system
- * @returns ETRS89Coordinates wiwth phi and la
+ * @returns StereoCoordinates with North and East
  *
  */
 export function ConvertETRS89ToStereo70(
