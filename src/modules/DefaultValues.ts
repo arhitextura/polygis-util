@@ -1,3 +1,9 @@
+/*---------------------------------------------------------------------------
+author: ROMPOS
+owner: Centrul National de Cartografiere
+source: https://rompos.ro/index.php/informatii-tehnice/transdatro/send/2-software/52-transdatro-cod-sursa-v1-04
+translated to javascript by Arh. Mihalcea Bogdan Daniel
+----------------------------------------------------------------------------*/
 export class DefaultValues {
     static NameFilegrdz: string = "EGG97_QGRJ.GRD";
     static NameFilegrd_R: string = "ETRS89_KRASOVSCHI42_2DJ.GRD";
@@ -15,10 +21,10 @@ export class DefaultValues {
      *    and then the data records are writen consecutively in rows from lower left
      *    corner to the uper right corner starting with position 6 (positions 0..5
      *    are for header):
-     *                size_N . . . . . . .  . .
-     *                   .                    .
-     *                   .                    .
-     *                   6, 7, 8, . . . . . size_E
+     *   size_N . . . . . . .  . . .
+     *        .                    .
+     *        .                    .
+     *        6, 7, 8, . . . . . size_E
      *    For 2D grid files, the order is: dE1, dN1, dE2, dN2, etc.
      */
 

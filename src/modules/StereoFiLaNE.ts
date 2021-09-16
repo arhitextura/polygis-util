@@ -1,3 +1,9 @@
+/*---------------------------------------------------------------------------
+author: ROMPOS
+owner: Centrul National de Cartografiere
+source: https://rompos.ro/index.php/informatii-tehnice/transdatro/send/2-software/52-transdatro-cod-sursa-v1-04
+translated to javascript by Arh. Mihalcea Bogdan Daniel
+----------------------------------------------------------------------------*/
 export class StereoFiLaNE {
     private a: number;
     private nf: number;

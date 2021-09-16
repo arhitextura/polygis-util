@@ -1,3 +1,10 @@
+/*---------------------------------------------------------------------------
+author: ROMPOS
+owner: Centrul National de Cartografiere
+source: https://rompos.ro/index.php/informatii-tehnice/transdatro/send/2-software/52-transdatro-cod-sursa-v1-04
+translated to javascript by Arh. Mihalcea Bogdan Daniel
+----------------------------------------------------------------------------*/
+
 import { DefaultValues as dV } from "./DefaultValues";
 import { Interpolation2D } from "./Interpolation";
 import { Helmert2D } from "./Helmert2D";
@@ -33,7 +40,7 @@ function Transformation(East: number, North: number, nameGrid: string): void {
  * @param East The east coordinate
  * @param North The north coordinate
  * @param stereo30or70 Choose between 30 or 70 stereo system
- * @returns ETRS89Coordinates with phi and la
+ * @returns ETRS89Coordinates object with phi and la property
  *
  */
 export function ConvertStereoToETRS89(
@@ -77,7 +84,7 @@ export function ConvertStereoToETRS89(
  * @param phi The east coordinate
  * @param la The north coordinate
  * @param stereo30or70 Choose between 30 or 70 stereo system
- * @returns StereoCoordinates with North and East
+ * @returns StereoCoordinates  object with North and East property
  *
  */
 export function ConvertETRS89ToStereo70(

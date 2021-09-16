@@ -1,3 +1,10 @@
+/*---------------------------------------------------------------------------
+author: ROMPOS
+owner: Centrul National de Cartografiere
+source: https://rompos.ro/index.php/informatii-tehnice/transdatro/send/2-software/52-transdatro-cod-sursa-v1-04
+translated to javascript by Arh. Mihalcea Bogdan Daniel
+----------------------------------------------------------------------------*/
+
 import fs from "fs";
 import path from "path";
 //const util = require("util");
@@ -75,8 +82,7 @@ export class Interpolation1D {
             this.phi <= minN + stepN ||
             this.phi >= maxN - stepN
         ) {
-            //NEEDS error handling
-            throw new Error("CANT READ ARRAY");
+            throw new Error("OUTSIDE BORDER");
         }
         nodcolx = Math.abs(Math.round((this.la - minE) / stepE));
         nodliny = Math.abs(Math.round((this.phi - minN) / stepN));

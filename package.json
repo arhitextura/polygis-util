@@ -1,8 +1,8 @@
 {
-    "name": "polygis-util",
+    "name": "polygis",
     "email": "contact@polygis.xyz",
-    "version": "1.0.0",
-    "description": "This package makes transformations between ETRS89, Stereo70 and Stereo30",
+    "version": "1.0.1",
+    "description": "This package makes transformations between ETRS89, Stereo70 and Stereo30 Romanian coordinates system.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
@@ -22,10 +22,12 @@
         "Stereo 30",
         "ETRS89",
         "Romania",
-        "cadaster"
+        "cadaster",
+        "conversion"
     ],
     "author": "Mihalcea Bogdan Daniel",
-    "license": "ISC",
+    "license": "MIT",
+    "funding": "https://www.buymeacoffee.com/MihalceaBogdan",
     "devDependencies": {
         "@types/jest": "^27.0.1",
         "@types/node": "^16.9.1",
